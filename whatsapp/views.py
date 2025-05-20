@@ -89,8 +89,8 @@ def process_message(sender, text, numero_da_mensagem):
     elif numero_da_mensagem == 3:
         question = "Essa dor está durando quanto tempo ? (A) até 6 horas de duração, (B) entre 6-12 horas de duração ou (C) mais de 12 horas de duração"
     elif numero_da_mensagem == 4:
-        context = f'O usuário foi questionado e respondeu a seguinte numero {text}. Qual numero foi escolhido ? Responda apenas com o numero'
-        response = int(ai_text(context))
+        context = f'você recebeu esta mensagem de um usuário:{text} e você deve classificar ela em um dos 3 grupos, A= até 6 horas,B= entre 6 e 12 horas e C= mais de 12 horas,responda com apenas um caractere em maíusculo que se encaixa nas opções dadas'
+        response = ai_text(context)
         question = ("Poderia nos encaminhar uma foto do local da dor?" if response == 'A'or 'B' or 'a' or 'b' else "Registrado! O seu médico ou um membro da equipe entrará em contato em instantes.")
     else:
         question = "Digite 'Encerrar' para finalizar a consulta."
